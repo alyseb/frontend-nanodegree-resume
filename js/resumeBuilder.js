@@ -75,3 +75,37 @@ if (bio.skills.length > 0){
 	var formattedsSkills = HTMLskills.replace("%data%", bio.skills[15]);
 	$("#skillsH3").append(formattedsSkills);
 }
+
+var work = {
+	"job" : [
+	{
+		"employer" : "Adobe Enterprises Ltd.",
+		"title" : "Office and IT Administrator",
+		"location" : "Vernon, BC, Canada",
+		"dates" : "2008 - Ongoing",
+		"description" : "Computer and technology set up and management, web consulting, custom template creation, Excel spreadsheet, data entry, accounting."
+	},
+	{
+		"employer" : "Fleetwood Development",
+		"title" : "IT Consultant",
+		"location" : "Surrey, BC, Canada",
+		"dates" : "2010 - Ongoing, as needed",
+		"description" : "Office technology technician, tech trainer, custom template creation, data entry, accounting."
+	},
+	{
+		"employer" : "Surrey Art Gallery Association",
+		"title" : "IT Consultant",
+		"location" : "Surrey, BC, Canada",
+		"dates" : "2010 - Ongoing, as needed",
+		"description" : "Computer and POS systems technician, custom template creation, data entry, accounting, sales processing."
+	},
+	{
+		"employer" : "Canadian International Metaphysical Ministry",
+		"title" : "IT Consultant",
+		"location" : "Vernon, BC, Canada",
+		"dates" : "2013 - Ongoing, as needed",
+		"description" : "Office technology consulting, web consulting, logo creation."
+	}
+			]
+		}
+
