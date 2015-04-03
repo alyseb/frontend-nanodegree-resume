@@ -38,6 +38,7 @@ var bio = {
 		
 	"bioPic" : "images/fry.jpg"
 }
+console.log(bio.skills);
 $("#main").append(bio.name);
 if (bio.skills.length > 0){
 	$("#header").append(HTMLskillsStart);
@@ -70,8 +71,6 @@ if (bio.skills.length > 0){
 	var formattedsSkills = HTMLskills.replace("%data%", bio.skills[13]);
 	$("#skills").append(formattedsSkills);
 	var formattedsSkills = HTMLskills.replace("%data%", bio.skills[14]);
-	$("#skills").append(formattedsSkills);
-	var formattedsSkills = HTMLskills.replace("%data%", bio.skills[15]);
 	$("#skills").append(formattedsSkills);
 }
 
@@ -112,6 +111,11 @@ for(job in work.jobs){
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 	var formattedEmployerTitle = formattedEmployer + formattedTitle;
-	
 	$(".work-entry:last").append(formattedEmployerTitle);
+	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	$(".work-entry:last").append(formattedDates);
+	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	$(".work-entry:last").append(formattedLocation);
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	$(".work-entry:last").append(formattedDescription);
 }
