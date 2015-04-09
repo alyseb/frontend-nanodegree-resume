@@ -106,6 +106,7 @@ var work = {
 	}
 			]
 		}
+function displayWork(){
 for(job in work.jobs){
 	$("#workExperience").append(HTMLworkStart);
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -119,3 +120,6 @@ for(job in work.jobs){
 	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 	$(".work-entry:last").append(formattedDescription);
 }
+}
+
+displayWork();
