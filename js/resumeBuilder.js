@@ -38,7 +38,7 @@ var bio = {
 		
 	"bioPic" : "images/fry.jpg"
 }
-console.log(bio.skills);
+
 $("#main").append(bio.name);
 if (bio.skills.length > 0){
 	$("#header").append(HTMLskillsStart);
@@ -123,3 +123,10 @@ for(job in work.jobs){
 }
 
 displayWork();
+
+$(document).click(function(loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
+});
