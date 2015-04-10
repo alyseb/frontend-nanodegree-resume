@@ -1,4 +1,6 @@
-var formattedName = HTMLheaderName.replace("%data%","AB");
+var name = "A Bright";
+
+var formattedName = HTMLheaderName.replace("%data%", name);
 
 var role = "Web Developer";
 var formattedRole = HTMLheaderRole.replace("%data%", role);
@@ -130,3 +132,18 @@ $(document).click(function(loc) {
 
   logClicks(x,y);
 });
+
+console.log($("#name").text());
+
+function inName(name) {
+	name = name.trim().split(" ");
+	console.log(name);
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0,1).toUpperCase() + 
+		name[0].slice(1).toLowerCase();
+
+	return name[0] +" "+name[1];
+}
+
+$("#main").append(internationalizeButton);
+
