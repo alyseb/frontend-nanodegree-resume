@@ -147,3 +147,46 @@ function inName(name) {
 
 $("#main").append(internationalizeButton);
 
+$("#mapDiv").append(googleMap);
+
+var projects = {
+
+		"projects":
+		[
+			{
+				"title" : "CIMM Logo",
+				"dates" : "2013",
+				"description" : "Graphic design of CIMM logo.",
+				"images" : ["images/CIMMLogo.jpg"]
+			},
+			{
+				"title" : "Udacity mockup site",
+				"dates" : "2015",
+				"description" : "Created HTML and CSS to turn a mockup image into a responsive webpage",
+				"images" : ["images/Project1Screenshot.jpg"]
+			}
+		]
+};
+
+projects.display = function(){
+	for (project in projects.projects){
+		$("#projects").append(HTMLprojectStart);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+		if (projects.projects[project].images.length > 0) {
+			for (image in projects.projects[project].images) {
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+				$(".project-entry:last").append(formattedImage);
+
+			}
+		}
+		
+		
+	}
+};
+
+projects.display();
