@@ -190,3 +190,95 @@ projects.display = function(){
 };
 
 projects.display();
+
+var education = {
+	"schools": [
+		{
+			"name" : "Fraser Valley Distance Education School",
+			"location" : "Chilliwack, BC, Canada",
+			"degree" : "Diploma",
+			"major" : [],
+			"dates" : "2006",
+			"site" : "http://www.fvdes.com/"
+		},
+		{
+			"name" : "University of Sedona",
+			"location" : "Sedona, Arizona, US",
+			"degree" : "Bachelor's in Metaphysical Science B. Msc.",
+			"major" : [],
+			"dates" : "2013",
+			"site" :"https://universityofsedona.com/"
+		}
+			],
+		
+		"onlinecourses" :
+	[
+		{
+			"title" : "App Design",
+			"school" : "Excel With Business",
+			"dates" : "2014",
+			"site" : "https://excelwithbusiness.com/course/details/App-Design/RJ7zdr4HQf"
+		},
+		{
+			"title" : "Intro to HTML and CSS",
+			"school" : "Udacity",
+			"dates" : "2015",
+			"site" : "https://www.udacity.com/course/ud304"
+		},
+		{
+			"title" : "How to Use Git and GitHub",
+			"school" : "Udacity",
+			"dates" : "2015",
+			"site" : "https://www.udacity.com/course/ud775"
+		},
+		{
+			"title" : "JavaScript Syntax",
+			"school" : "Udacity",
+			"dates" : "2015",
+			"site" : "https://www.udacity.com/course/ud804"
+		},
+		{
+			"title" : "Intro to jQuery",
+			"school" : "Udacity",
+			"dates" : "2015",
+			"site" : "https://www.udacity.com/course/ud245"
+		}
+	]
+		
+};
+
+
+education.display = function(){
+	for (school in education.schools){
+		$("#education").append(HTMLschoolStart);
+		var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		$(".education-entry:last").append(formattedschoolName);
+		var formattedschoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		$(".education-entry:last").append(formattedschoolLocation);
+		var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		$(".education-entry:last").append(formattedschoolDegree);
+		if (education.schools[school].major.length > 0){
+			for (major in education.schools[school].major){
+			var formattedschoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major[major]);
+		$(".education-entry:last").append(formattedschoolMajor);
+		}
+		}
+		var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		$(".education-entry:last").append(formattedschoolDates);
+	}
+		$(".education-entry:last").append(HTMLonlineClasses);
+
+	for (course in education.onlinecourses){
+		var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlinecourses[course].title);
+		$(".education-entry:last").append(formattedonlineTitle);
+		var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlinecourses[course].school);
+		$(".education-entry:last").append(formattedonlineSchool);
+		var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlinecourses[course].dates);
+		$(".education-entry:last").append(formattedonlineDates);
+		var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlinecourses[course].site);
+		$(".education-entry:last").append(formattedonlineURL);
+		}
+
+};
+
+education.display();
