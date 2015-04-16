@@ -10,7 +10,7 @@ $("#header").prepend(formattedName);
 
 
 var bio = {
-	"name" : "AB",
+	"name" : "A Bright",
 	"role" : "Web Developer",
 	"contacts" : {
 		"mobile" : "1-555-555-5555",
@@ -41,7 +41,27 @@ var bio = {
 	"bioPic" : "images/fry.jpg"
 }
 
-$("#main").append(bio.name);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$("#topContacts").append(formattedMobile);
+$("#letsConnect #footerContacts").append(formattedMobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#topContacts").append(formattedEmail);
+$("#letsConnect #footerContacts").append(formattedEmail);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+$("#topContacts").append(formattedTwitter);
+$("#letsConnect #footerContacts").append(formattedTwitter);
+var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+$("#topContacts").append(formattedGitHub);
+$("#letsConnect #footerContacts").append(formattedGitHub);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#topContacts").append(formattedLocation);
+$("#letsConnect #footerContacts").append(formattedLocation);
+var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+$("#header").append(formattedbioPic);
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+$("#header").append(formattedWelcomeMsg);
+
+
 if (bio.skills.length > 0){
 	$("#header").append(HTMLskillsStart);
 	var formattedsSkills = HTMLskills.replace("%data%", bio.skills[0]);

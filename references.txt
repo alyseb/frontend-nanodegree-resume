@@ -1,0 +1,7 @@
+Udacity course, Javascript Basics
+
+Mozilla Developer Network, Javascript Reference
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+w3schools.com, Javascript Reference
+http://www.w3schools.com/js/js_objects.asp
